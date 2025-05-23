@@ -1,0 +1,12 @@
+---
+- name: Deploy HTML container
+  hosts: localhost
+  tasks:
+    - name: Stop old container if running
+      shell: docker stop html_container || true
+
+    - name: Remove old container
+      shell: docker rm html_container || true
+
+    - name: Run new container
+      shell: docker run -d --name html_container -p 80:80 htmlsite:latest
