@@ -6,8 +6,8 @@ pipeline {
         LOCAL_DIR = 'd:\\DevopsMiniProject'
         IMAGE_NAME = 'htmlsite:latest'
         CONTAINER_NAME = 'html_container'
-        WSL_ANSIBLE_SCRIPT = '/mnt/d/htmlProject/deploy.yml'
-        WSL_USER = 'ubuntuuser'  // Replace with your actual WSL username
+        WSL_ANSIBLE_SCRIPT = '/mnt/d/htmlProject/devopsdeploy.yml'
+        WSL_USER = 'root'  // Replace with your actual WSL username
     }
 
     stages {
