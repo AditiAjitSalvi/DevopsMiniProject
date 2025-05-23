@@ -3,10 +3,11 @@ pipeline {
 
     environment {
         GIT_REPO = 'https://github.com/AditiAjitSalvi/DevopsMiniProject.git'
-        LOCAL_DIR = 'd:\\DevopsMiniProject'  // Adjust path as needed
+        LOCAL_DIR = 'd:\\DevopsMiniProject'
         IMAGE_NAME = 'htmlsite:latest'
         CONTAINER_NAME = 'html_container'
-        WSL_ANSIBLE_SCRIPT = '/mnt/d/htmlProject/deploy.yml'  // Adjust for your WSL path
+        WSL_ANSIBLE_SCRIPT = '/mnt/d/htmlProject/deploy.yml'
+        WSL_USER = 'ubuntuuser'  // Replace with your actual WSL username
     }
 
     stages {
@@ -25,10 +26,9 @@ pipeline {
         }
 
         stage('Deploy with Ansible on WSL') {
-      steps {
-        bat 'wsl -u ubuntuuser ansible-playbook /mnt/d/htmlProject/deploy.yml'
-      }
-    }
+            steps {
+                bat "wsl -u ${WSL_USER} ansible-playbook ${WSL_ANSIBLE_SCRIPT}"
+            }
         }
     }
 }
