@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         GIT_REPO = 'https://github.com/AditiAjitSalvi/DevopsMiniProject.git'
-        LOCAL_DIR = 'D:\DevopsMiniProject'  // Adjust path as needed
+        LOCAL_DIR = 'd:\\DevopsMiniProject'  // Adjust path as needed
         IMAGE_NAME = 'htmlsite:latest'
         CONTAINER_NAME = 'html_container'
         WSL_ANSIBLE_SCRIPT = '/mnt/d/htmlProject/deploy.yml'  // Adjust for your WSL path
