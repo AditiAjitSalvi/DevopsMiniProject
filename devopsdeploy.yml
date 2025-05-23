@@ -1,6 +1,7 @@
 ---
 - name: Deploy HTML container
   hosts: localhost
+  become: yes
   tasks:
     - name: Stop old container if running
       shell: docker stop html_container
@@ -12,3 +13,8 @@
 
     - name: Run new container
       shell: docker run -d --name html_container -p 80:80 htmlsite:latest
+      register: run_result
+
+    - name: Display container ID
+      debug:
+        var: run_result.stdout
