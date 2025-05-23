@@ -1,6 +1,7 @@
 ---
 - name: Deploy HTML container
-    tasks:
+  hosts: localhost
+  tasks:
     - name: Stop old container if running
       shell: docker stop html_container || true
 
