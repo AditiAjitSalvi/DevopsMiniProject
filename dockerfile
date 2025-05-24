@@ -1,11 +1,11 @@
 # Use official Nginx image as the base
 FROM nginx:alpine
 
-# Copy your HTML file to Nginx's default public folder
-COPY Home.html /usr/share/nginx/html/index.html
+# Copy all website files into Nginx's HTML directory
+COPY . /usr/share/nginx/html/
 
-# Expose port 80 to view the web page
+# Expose port 80
 EXPOSE 80
 
-# Start Nginx server
+# Start Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
