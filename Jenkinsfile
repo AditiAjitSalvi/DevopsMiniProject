@@ -37,5 +37,13 @@ pipeline {
                 }
             }
         }
+        stage('Deploy with Ansible on WSL') {
+            steps {
+                script {
+                    bat "wsl ansible-playbook %WSL_ANSIBLE_SCRIPT%"
+                }
+            }
+        }
+
     }
 }
