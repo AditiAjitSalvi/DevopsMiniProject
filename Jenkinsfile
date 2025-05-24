@@ -25,6 +25,16 @@ pipeline {
             }
         }
 
-       
+        stage('Run Docker Container') {
+            steps {
+                script {
+                    bat """
+                        docker stop %CONTAINER_NAME% || exit 0
+                        docker rm %CONTAINER_NAME% || exit 0
+                        docker run -d -p 8080:80 --name %CONTAINER_NAME% %IMAGE_NAME%
+                    """
+                }
+            }
+        }
     }
 }
