@@ -4,7 +4,7 @@ pipeline {
     environment {
         GIT_REPO = 'https://github.com/AditiAjitSalvi/DevopsMiniProject.git'
         LOCAL_DIR = 'd:\\DevopsMiniProject'
-        IMAGE_NAME = 'htmlsite:latest' 
+        IMAGE_NAME = 'dockerfile'//'htmlsite:latest' 
         CONTAINER_NAME = 'html_container'
         WSL_ANSIBLE_SCRIPT = '/mnt/d/DevopsMiniProject/devopsdeploy.yml'
         WSL_USER = 'aditi'  // Replace with your actual WSL username
